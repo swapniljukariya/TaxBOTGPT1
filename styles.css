@@ -1,0 +1,800 @@
+/* General Reset */
+
+  /* Header Styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(2, 2, 29, 0.967);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header .logo img {
+    height: 70px;
+  }
+  
+  header nav ul {
+    display: flex;
+    gap: 5px;
+    width: 90vw;
+    margin-left: 50%;
+  }
+  
+  header nav ul li {
+    list-style: none;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    background-color: rgb(130, 150, 238);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    header{
+      display: flex;
+      flex-direction: row;
+    }
+    header nav ul {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(2, 2, 29, 0.967);
+      padding: 20px;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  
+    header nav ul.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+  
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      transition: transform 0.3s ease;
+    }
+  
+    .close-btn {
+      display: none; /* Initially hide the close button */
+      align-self: flex-end;
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+      margin-bottom: 20px;
+    }
+  
+    /* Show close button when menu is visible */
+    header nav ul.show + .close-btn {
+      display: block;
+    }
+  }
+  
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+/* Base styling for hero section */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+/* Particles */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* Slideshow Container */
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  display: block;
+}
+
+/* Individual Slide Styles */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+/* Active Slide */
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  #hero {
+    height: 80vh; /* Reduce height on tablets */
+  }
+
+  .slideshow .slide {
+    background-size: cover; /* Ensure images scale well */
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 60vh; /* Reduce height for smaller screens */
+  }
+
+  .slideshow .slide {
+    background-size: cover; /* Ensure background covers the full slide */
+  }
+}
+
+@media (max-width: 480px) {
+  #hero {
+    height: 50vh; /* Further reduce height on very small screens */
+    width: 100vw;
+  }
+
+  .slideshow .slide {
+    background-size: cover; /* Ensure images scale well */
+    background-position:  center;
+  }
+}
+
+
+
+/* FAQ Section */
+
+
+/* Expanded state */
+.faq-item.active .faq-answer {
+  max-height: 100px; /* Adjust based on content length */
+  padding-top: 10px;
+}
+
+.faq-item.active .faq-question {
+  background-color: #333;
+  color: white;
+}
+
+
+/* Make the page scrollable */
+body {
+    overflow-y: auto; /* Enable scrolling */
+    height: auto; /* Allow the height to grow with content */
+}
+
+
+
+  
+  /* Why Choose TaxBotGPT Section */
+  .why-choose-taxbotgpt {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .why-choose-taxbotgpt .feature h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 50px;
+  }
+  
+  .why-choose-taxbotgpt .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Feature Card Styling */
+  .feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: left;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #e6f7ff;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .feature-card p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .feature-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feature-card ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .feature-card ul li:before {
+    content: "✔️";
+    margin-right: 8px;
+  }
+  
+  .feature-card .btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+  
+  .feature-card .btn:hover {
+    background-color: #004d99;
+  }
+  
+  /* Keyframe Animation for Fade-in Effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media Query for Responsiveness */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  
+    .why-choose-taxbotgpt .feature-cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+  /* Pricing section */
+  /* Pricing Section Styling */
+.pricing-section {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color:  #003366;
+  }
+  
+  .pricing-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color:  #003366;
+  }
+  
+  .pricing-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color:  #003366;
+  }
+  
+  .pricing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .pricing-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pricing-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color:  #003366;;
+  }
+  
+  .pricing-card p {
+    font-size: 1rem;
+    color:  #003366;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .pricing-card ul li {
+    font-size: 1rem;
+    color: #003366;;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .pricing-card ul li:before {
+    content: '✔';
+    color:  #003366;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .pricing-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:  #003366;
+    margin-bottom: 20px;
+  }
+  
+  .pricing-card button {
+    background-color: rgb(12, 12, 43);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pricing-card button:hover {
+    background-color: #003366;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .pricing-section h1 {
+      font-size: 2rem;
+    }
+  
+    .pricing-section p {
+      font-size: 1rem;
+    }
+  
+    .pricing-card {
+      padding: 15px;
+    }
+  }
+
+
+  .features-section {
+    text-align: center;
+    margin: 50px auto;
+}
+.features-section img {
+    max-width: 100%;
+    height: 30;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+        /* FAQ Section Styling */
+/* FAQ Section Styling */
+.faq-section {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background:   #003366;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq-item {
+    margin-bottom: 15px;
+  }
+  
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: white;
+    color:rgb(12, 12, 43);
+    border: 1px solid  #003366;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px  #003366;
+  }
+  
+  .faq-question:hover {
+    background-color: #e9f1ff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 20px;
+    background: white;
+    color: #333;
+    border-left: 4px solid  #003366;
+    border-radius: 0 0 8px 8px;
+    margin-top: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-answer p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  .title{
+    color: white;
+    text-align: center;
+  }
+  
+  /* Active State */
+  .faq-item.active .faq-answer {
+    max-height: 150px; /* Adjust based on content length */
+    padding: 10px 20px;
+  }
+  
+  .faq-item.active .faq-question {
+    background-color: #003366;
+    color: white;
+    border-color:  #003366;
+    box-shadow: 0 4px 10px  #003366;
+  }
+  .footer {
+        background-color:rgba(2, 2, 29, 0.967);;
+        color: white;
+        padding: 40px 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-section {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #f4a261;
+    }
+
+    .footer-section p, .footer-section a {
+        font-size: 14px;
+        color: #ddd;
+        line-height: 1.6;
+    }
+
+    .footer-section a {
+        text-decoration: none;
+        color: #ddd;
+    }
+
+    .footer-section a:hover {
+        color: #f4a261;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        font-size: 20px;
+        color: #ddd;
+        text-decoration: none;
+    }
+
+    .social-icon:hover {
+        color: #f4a261;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        background-color: #222;
+        margin-top: 20px;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+        }
+
+        .footer-section {
+            padding: 10px;
+        }
+    }
+    
+    
+    
+    
+    .featured-section {
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .featured-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #444;
+    }
+
+    .scroll-container {
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 15px;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
+    .featured-item {
+        flex: 0 0 auto;
+        width: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 10px;
+    }
+
+    .featured-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .featured-item img {
+        width: 80%;
+        height:110px;
+        padding: 25px;
+    
+      
+        
+      
+    }.scroll-buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+    }
+
+    .scroll-buttons button {
+        pointer-events: all;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .scroll-buttons button:hover {
+        background-color: #ddd;
+    }
+
+    .scroll-buttons button:disabled {
+        background-color: #f0f0f0;
+        cursor: not-allowed;
+    }
+
+    .scroll-buttons button i {
+        font-size: 16px;
+        color: #444;
+    }
+
+    .features-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px 20px;
+    }
+
+    .features-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #1a73e8;
+        margin-bottom: 20px;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .feature-card {
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        color: #1a73e8;
+        margin-bottom: 15px;
+    }
+
+    .feature-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .feature-description {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 1024px) {
+      .slide {
+        background-size: contain; /* Ensure the image fits within the slide without cropping */
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .slide {
+        background-size: contain;
+        background-position: center top; /* Adjust focus for smaller screens */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .slide {
+        background-size: contain;
+        background-position: center; /* Center the image for mobile phones */
+      }
+    }
